@@ -1,4 +1,5 @@
 const request =require("supertest");
+const { sequelize, Todo } = require('../models');
 const app = require("../index");
 
 
@@ -8,6 +9,17 @@ describe('Todo Restful Api',()=>{
     title:"Learn About Caching",
     description:"Learn about caching and its importance,How to impliment it within 2 days"
    }
+  // ENSURE DATABASE IS SYNCHRONIZED
+  beforeAll(async () => {
+    await sequelize.sync({ force: true });
+  });
+
+  // CLOSE THE SEQUELIZ CONNECTION
+  afterAll(async () => {
+    await sequelize.close();
+  });
+
+
 
   //  TEST CREATING OF TODO
   describe('POST Todo /api/todos',()=>{
@@ -47,7 +59,7 @@ describe('Todo Restful Api',()=>{
    });
   });
 
-  
+
   // TEST FETCHING TODO BY ID
   describe('GET Todo by ID /api/todos/:id', () => {
     it('Should get a todo by ID', async () => {
