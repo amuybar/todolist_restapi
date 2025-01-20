@@ -1,0 +1,35 @@
+{
+  "name": "todo_rstapi",
+  "version": "1.0.0",
+  "description": "Todo Rest Api",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js",
+    "dev":"nodemon index.js",
+    "test": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amuybar/todolist_restapi.git"
+  },
+  "keywords": [
+    "Todo",
+    "Rest",
+    "API"
+  ],
+  "author": "Barack Amuyunzu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amuybar/todolist_restapi/issues"
+  },
+  "homepage": "https://github.com/amuybar/todolist_restapi#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
